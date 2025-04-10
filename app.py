@@ -28,11 +28,11 @@ if submitted:
 
         # 유효성 검사
         if not (10 <= freq_val <= 100000):
-            st.warning("📛 Frequency는 10 ~ 100000 사이여야 합니다.")
+            st.warning("📛 Frequency는 10 ~ 100000 사이어야 합니다.")
         elif not (1000 <= imp_val <= 50000):
-            st.warning("📛 Impedance는 1000 ~ 50000Ω 사이여야 합니다.")
+            st.warning("📛 Impedance는 1000 ~ 50000Ω 사이어야 합니다.")
         elif not (0 <= time_val <= 1440):
-            st.warning("📛 Time은 0 ~ 1440 분 사이여야 합니다.")
+            st.warning("📛 Time은 0 ~ 1440 분 사이어야 합니다.")
         else:
             X_input = np.array([[freq_val, imp_val, time_val]])
             X_scaled = scaler_X.transform(X_input)
