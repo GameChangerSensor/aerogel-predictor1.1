@@ -15,7 +15,7 @@ st.title("💠 에어로겔 물성 예측기")
 with st.form("input_form"):
     frequency = st.text_input("🔹 Frequency (Hz) (10 ~ 100000)", value="1000")
     impedance = st.text_input("🔹 Impedance (Ω) (1000 ~ 50000)", value="5000")
-    time = st.text_input("🔹 Time (분) (0 ~ 1440)", value="60")
+    time = st.text_input("🔹 Time (min) (0 ~ 1440)", value="60")
     
     submitted = st.form_submit_button("Predict")
 
@@ -41,9 +41,9 @@ if submitted:
 
             st.success("✅ 예측 완료!")
             st.markdown(f"""
-            - **Interpolated Surface area (m²/g)**: `{y_pred[0][0]:.2f}`
-            - **Interpolated Pore diameter (nm)**: `{y_pred[0][1]:.2f}`
-            - **Interpolated Pore Volume (cm³/g)**: `{y_pred[0][2]:.4f}`
+            - **Surface area (m²/g)**: `{y_pred[0][0]:.2f}`
+            - **Pore diameter (nm)**: `{y_pred[0][1]:.2f}`
+            - **Pore Volume (cm³/g)**: `{y_pred[0][2]:.4f}`
             """)
 
     except ValueError:
